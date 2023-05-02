@@ -1,0 +1,15 @@
+ContextMap ManufacturingResourcesPlanningSystem {
+    type = SYSTEM_LANDSCAPE
+    state = TO_BE
+
+    contains MasterdataContext
+    contains ProductionOrderContext
+    contains ProductInventoryContext
+
+    ProductionOrderContext [U]->[D] MasterdataContext
+    ProductInventoryContext [U]->[D] MasterdataContext
+}
+
+BoundedContext MasterdataContext { }
+BoundedContext ProductionOrderContext { }
+BoundedContext ProductInventoryContext { }
