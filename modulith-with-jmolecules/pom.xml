@@ -14,7 +14,7 @@
 		<java.version>17</java.version>
 		<jmolecules-bom.version>2023.1.0</jmolecules-bom.version>
 		<bytebuddy.version>1.14.7</bytebuddy.version>
-		<hibernate.version>6.2.0.Final</hibernate.version>
+		<hibernate.version>6.2.8.Final</hibernate.version>
 		<archunit.version>1.1.0</archunit.version>
 	</properties>
 	<dependencyManagement>
