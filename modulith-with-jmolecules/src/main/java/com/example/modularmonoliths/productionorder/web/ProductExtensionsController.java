@@ -52,6 +52,7 @@ class ProductExtensionsController implements RepresentationModelProcessor<Entity
 	@Override
 	public EntityModel<Product> process(EntityModel<Product> model) {
 		val product = model.getContent();
+		if (product == null) return model;
 		if (product.getState() == ProductState.ACTIVE) {
             model.add(linkTo(methodOn(ProductExtensionsController.class)
             		.create(product.getId(), null)).withRel(REL_CREATE_ORDER));

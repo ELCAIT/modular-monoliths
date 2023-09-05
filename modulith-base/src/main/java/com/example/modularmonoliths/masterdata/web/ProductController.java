@@ -95,6 +95,7 @@ class ProductController implements RepresentationModelProcessor<EntityModel<Prod
     @Override
     public EntityModel<Product> process(EntityModel<Product> model) {
         val product = model.getContent();
+        if (product == null) return model;
         model.add(getSelfLink(product));
         if (product.getState() == ProductState.ACTIVE) {
             model.add(linkTo(methodOn(getClass()).rename(product, null)).withRel(REL_RENAME));

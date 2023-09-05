@@ -92,6 +92,7 @@ public class ProductionOrderController implements RepresentationModelProcessor<E
     @Override
     public EntityModel<ProductionOrder> process(EntityModel<ProductionOrder> model) {
         val order = model.getContent();
+        if (order == null) return model;
         if (order.getState() == ProductionOrderState.DRAFT) {
             model.add(linkTo(methodOn(getClass()).rename(order.getId(), null)).withRel(REL_RENAME));
             model.add(linkTo(methodOn(getClass()).submit(order.getId())).withRel(REL_SUBMIT));
