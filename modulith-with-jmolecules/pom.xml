@@ -14,7 +14,6 @@
 		<java.version>17</java.version>
 		<jmolecules-bom.version>2023.1.1</jmolecules-bom.version>
 		<bytebuddy.version>1.14.11</bytebuddy.version>
-		<hibernate.version>6.2.8.Final</hibernate.version>
 		<archunit.version>1.2.1</archunit.version>
 	</properties>
 	<dependencyManagement>
@@ -25,13 +24,6 @@
 				<version>${jmolecules-bom.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
-			</dependency>
-
-			<!-- Custom version overrides -->
-			<dependency>
-				<groupId>org.hibernate.orm</groupId>
-				<artifactId>hibernate-core</artifactId>
-				<version>${hibernate.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -79,12 +71,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.hibernate.orm</groupId>
-					<artifactId>hibernate-core-jakarta</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate.orm</groupId>
